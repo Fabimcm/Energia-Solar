@@ -443,67 +443,39 @@ td.pagina-coluna {
     display: none;
 }
 
-
-
 .button {
-    display: flex;
+    display: inline-block; /* Exibir como bloco inline */
     align-items: center;
-    background-color: #00A335;
-    /* Cor de fundo */
-    border: none;
-    /* Remover borda */
-    color: white;
-    /* Cor do texto */
-    padding: 15px 32px;
-    /* Espaçamento interno */
-    text-align: center;
-    /* Centralizar texto */
-    text-decoration: none;
-    /* Remover sublinhado */
-    display: inline-block;
-    /* Exibir como bloco inline */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    margin: 4px 2px;
-    /* Margem */
-    cursor: pointer;
-    /* Cursor de ponteiro */
-    border-radius: 25px;
-    /* Bordas arredondadas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra */
-    transition: background-color 0.3s;
-    /* Transição para a cor de fundo */
+    background-color: #00A335; /* Cor de fundo */
+    border: 2px solid #00A335; /* Borda de 2px na cor #00A335 */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    /* font-weight: bold; Deixa em negrito */
+    text-align: center; /* Centralizar texto */
+    text-decoration: none; /* Remover sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem */
+    cursor: pointer; /* Cursor de ponteiro */
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s, transform 0.1s; /* Transição para a cor de fundo e transformação */
 }
 
 .button:hover {
-    background-color: #00863F;
-    /* Cor de fundo ao passar o mouse */
-    transform: translateY(-2px);
-    /* Elevar o botão ao passar o mouse */
+    background-color: #00A335; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto */
+    transform: translateY(-2px); /* Elevar o botão ao passar o mouse */
 }
 
 .button:active {
-    background-color: #00863F;
-    /* Cor de fundo ao clicar */
-    transform: translateY(2px);
-    /* Rebaixar o botão ao clicar */
+    background-color: #008F2A; /* Cor de fundo ao clicar (um verde mais escuro) */
+    transform: translateY(0); /* Voltar à posição original ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Diminuir sombra ao clicar */
 }
-
-.button img {
-    margin-right: 10px;
-    /* Espaçamento entre a imagem e o texto */
-    width: 24px;
-    /* Largura da imagem */
-    height: 24px;
-    /* Altura da imagem */
-}
-
 
 
 .image-text-container img {
-    margin-right: 5px;
-    /* Espaçamento entre a imagem e o texto */
+    margin-right: 5px;    /* Espaçamento entre a imagem e o texto */
 }
 
 .image-text-container {
@@ -1462,4 +1434,147 @@ table {
     text-transform: uppercase; /* Maiúsculas */
     font-family: Arial, sans-serif; /* Fonte personalizada */
   }
+
+  .scrollable-table {
+    max-height: 600px; /* Altura máxima que desejar */
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+    border: 1px solid #ccc; /* Opcional, apenas para estilizar a borda */
+}
+
+.table-header th {
+    background-color: #50788A; /* Cor de fundo sólida */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    height: 50px;
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 0; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    max-width: 100%;
+    position: sticky; /* Adiciona a funcionalidade sticky */
+    top: 0; /* Fixa o cabeçalho no topo da tabela */
+    z-index: 1; /* Garante que o cabeçalho fique acima de outros elementos */
+    background-clip: padding-box; /* Garante que o fundo não seja cortado pela borda */
+    overflow: hidden; /* Oculta conteúdo extra que não cabe */
+    text-overflow: ellipsis; /* Adiciona reticências para textos longos */
+
+}
+
+.table-header th:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    background-color: #5F9EA0;
+    border-radius: 15px 15px 0 0; /* Mantém as bordas arredondadas */
+    color: white;
+}
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .table-header th {
+        font-size: 12px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 8px 10px; /* Ajusta o padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .table-header th {
+        font-size: 10px; /* Fonte ainda menor em telas muito pequenas */
+        padding: 6px 8px; /* Menos espaço ao redor do texto */
+    }
+}
+.important-text {
+    color: #50788a;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.normal-text {
+    font-weight: normal;
+}
+ul, ol {
+    text-align: left;
+    padding-left: 20px; /* Ajuste conforme necessário */
+  }
+    /* Estilo específico para links com target="_blank" usando uma classe */
+    .external-link {
+        color: #00A8D5;
+        font-weight: bold; /* Opcional: deixa o texto em negrito */
+    }
+
+    /* Efeito de hover para links com target="_blank" */
+    .external-link:hover {
+        color: #0084A9;
+    }
+/* Estilizando o fundo escurecido e o pop-up */
+.popup {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    z-index: 1; /* Coloca a camada de fundo acima de tudo */
+  }
   
+  .popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2; /* Mantém o pop-up acima da camada de fundo */
+    position: relative; /* Para garantir que o z-index funcione corretamente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+  }
+  
+  .close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+   /* Estilo para o botão de abrir pop-up */
+   #openPopupBtn {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #00a335;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: small;
+    border: 0ch;
+    border-radius: 9;
+    color: white;
+}
+
+  /* Estilo para o link */
+  a {
+    color: #0698BD; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+  }
+
+  /* Efeito hover (ao passar o mouse por cima) */
+  a:hover {
+    background-color: #f0f0f0; /* Cor de fundo no hover */
+    color: #0084A9; /* Cor do texto no hover */
+  }
+
+  /* Efeito ativo (ao clicar no link) */
+  a:active {
+    color: #00485E; /* Cor ao clicar */
+  }
