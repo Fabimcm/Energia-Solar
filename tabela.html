@@ -27,7 +27,7 @@
 
 
 
-	<title>Suporte Energia</title>
+	<title>Suporte Redes</title>
 </head>
 
 <body>
@@ -105,8 +105,8 @@
 						<body>
 							<!-- <h2>Tabela comparativa de produtos da unidade de Redes Intelbras</h2> -->
 
-							<button class="button" onclick="showTable('table1')">Carregador Veícular</button>
-							<button class="button" onclick="showTable('table2')">Nobreaks</button>
+							<button class="button" onclick="showTable('table1')">Roteadores Corporativos</button>
+							<button class="button" onclick="showTable('table2')">Switches</button>
 						
 							<script>
 								function showTable(tableId) {
@@ -117,17 +117,9 @@
 
 							<div id="table1" class="hidden">
 								<div class="search-filter-container">
-
-									<!-- Contêiner para alinhar o filtro à esquerda e a busca à direita -->
-
-								<div class="search-filter-container">
-									<div class="filter-buttons">
-										<button class="botao-filtro" onclick="toggleFiltros()">Filtro</button>
-									</div>
 									<input type="text" id="searchInput1" placeholder="Pesquisar por modelo..."
 										onkeyup="searchTable1()" class="search-input" />
 								</div>
-													
 								<div class="scrollable-table">
 									<table border="1">
 										<thead class="table-header">
@@ -211,7 +203,7 @@
 										<thead class="table-header">
 											<tr>
 												<th>Modelo</th>
-												<th>Bateria(S)</th>
+												<th>Interface</th>
 												<th onclick="sortTable(2)">Qtde Portas</th>
 												<th>Possui SFP</th>
 												<th>Gerenciável</th>
@@ -946,44 +938,6 @@
 					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 
 </html>
