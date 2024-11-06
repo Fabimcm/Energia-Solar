@@ -9,7 +9,7 @@
 a.sidebar-link {
     background: #ffffff;
     color: #647279;
-    border-radius: 10px;
+    border-radius: 0 !important;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 15px;
@@ -1578,3 +1578,7 @@ ul, ol {
   a:active {
     color: #00485E; /* Cor ao clicar */
   }
+/* custom.css */
+.navbar {
+    border-radius: 0 !important;
+}
