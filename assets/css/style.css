@@ -738,13 +738,13 @@ th:not(.modelo) {
 
 .yellow-rectangle {
     display: inline-block; /* Faz a sigla se comportar como um bloco inline */
-    border-radius: 15px;/* Bordas arredondadas */
+    border-radius: 0;/* Bordas arredondadas */
     background-color: #EB741F;
     color: #fff; /* Cor do texto */
     font-weight: bold; /* Negrito */
     font-size: 12px; /* Tamanho da fonte */
     padding: 2px 8px; /* Espaçamento interno */
-    border-radius: 15px; /* Bordas arredondadas */
+    border: radius 0; /* Bordas arredondadas teste*/
     margin-left: 8px; /* Espaçamento à esquerda */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
     text-transform: uppercase; /* Maiúsculas */
@@ -938,6 +938,25 @@ th:not(.modelo) {
     text-align: center;
 }
 
+xgspon-rectangle {
+    width: 60px;
+    /* Largura do retângulo */
+    height: 45px;
+    /* Altura do retângulo */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    background-color: #7c006d;
+    /* Amarelo */
+    color: #ffffff;
+    /* Cor do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    /* Negrito */
+    text-align: center;
+}
 .xgspon-rectangle {
     width: 80px;
     /* Largura do retângulo */
@@ -1149,9 +1168,9 @@ table {
 }
 
 .card {
-    border: 1px solid #00a335;
+    border: 0 solid #00a335;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
+    border-radius: 0 !important;
     background-color: #fff;
 }
 
