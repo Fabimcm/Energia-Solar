@@ -939,9 +939,9 @@ th:not(.modelo) {
 }
 
 xgspon-rectangle {
-    width: 60px;
+    width: 40px;
     /* Largura do retângulo */
-    height: 45px;
+    height: 60px;
     /* Altura do retângulo */
     border-radius: 15px;
     /* Bordas arredondadas */
@@ -958,9 +958,9 @@ xgspon-rectangle {
     text-align: center;
 }
 .xgspon-rectangle {
-    width: 80px;
+    width: 40px;
     /* Largura do retângulo */
-    height: 20px;
+    height: 30px;
     /* Altura do retângulo */
     border-radius: 15px;
     /* Bordas arredondadas */
