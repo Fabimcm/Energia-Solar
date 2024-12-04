@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Energia ITB">
+	<meta name="author" content="Intelbras">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>Energia</title>
+
+	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar text-dark">
+			<div class="sidebar-content js-simplebar">
+				<a href="https://intelbras.com.br" target="_blank" class="sidebar-brand text-center">
+					<img src="./assets/img/png/intelbras_marca.svg">
+				</a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./index.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/home" style="width: 25px;">
+							</div>
+							<span class="align-middle">Início</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./tabela.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/tabel.png" style="width: 22px;">
+							</div>
+							<span class="align-middle">Tabela de produtos</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./Faq-teste.html">
+							<div class="icon-container">
+								<img src="./assets/img/png/charging.png" style="width: 30px;">
+							</div>
+							<span class="align-middle">CVE</span>
+						</a>
+					</li>
+					
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./faq-radio.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/radio.svg" style="width: 13px;">
+							</div>
+							<span class="align-middle">Rádios</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./faq-switch.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/switch.svg" style="width: 35px;">
+							</div>
+							<span class="align-middle">Switches</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="./faq-fibras.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/olt.svg" style="width: 35px;">
+							</div>
+							<span class="align-middle">Fibras</span>
+						</a>
+					</li>
+				<!-- <li class="sidebar-item">
+						<a class="sidebar-link" href="./comandos.html">
+							<div class="icon-container">
+								<img src="./assets/img/icons/cliii.png" style="width: 22px;">
+							</div>
+							<span class="align-middle">Comandos OLT</span>
+						</a>
+					</li> -->
+
+
+					<li class="sidebar-item">
+						<a target="_blank" class="sidebar-link" href="https://chat.apps.intelbras.com.br/">
+							<div class="icon-container">
+								<i class="fa fa-headset fa-lg text-dark"></i>
+							</div>
+							<span class="align-middle">Chat online</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+
+		<div class="main text-center">
+			<div class="row" style="margin-left: 0.1px;">
+				<nav class="w-100 navbar navbar-expand navbar-light border position-fixed"
+					style="z-index: 999; background-color: #f8f9fa;">
+					<div class="d-flex flex-row">
+						<div class="">
+							<a class="sidebar-toggle d-flex" id="sidebarToggle">
+								<i class="hamburger align-self-center"></i>
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<main class="content">
+				<section id="faq-5g">
+					<!-- accordion -->
+					<div class="accordion w-100 mt-5">
+						<!-- Menu de pesquisa -->
+								<!-- Menu de pesquisa -->
+								<div class="search-filter-container">
+									<div class="input-button-group">
+										<button id="toggleFiltro" onclick="toggleFiltros()">Filtrar</button>
+		
+										<input type="text" id="searchInput" placeholder="Pesquisar vídeos..."
+											oninput="applyFilters()" class="search-input" />
+									</div>
+								</div>
+		
+		
+								<!-- Seção de filtros -->
+								<div id="filtros" class="escondido">
+									<button class="botao-filtro"
+										onclick="setCategoryFilter('categoria-configuracao')">Configurações</button>
+									<!-- <button class="botao-filtro"onclick="setCategoryFilter('categoria-tecnologias')">Tecnologias</button> -->
+									<button class="botao-filtro"onclick="setCategoryFilter('categoria-comercial')">Comercial</button>
+									<button class="botao-filtro"onclick="setCategoryFilter('categoria-Especificação')">Especificação</button>
+									<!-- <button class="botao-filtro" onclick="setCategoryFilter('categoria-boas-praticas')">Boas Práticas</button> -->
+									<button class="botao-filtro" onclick="setCategoryFilter('')">Mostrar Todos</button>
+								</div>
+		
+		
+<!-- Acordeão de vídeos -->
+<div id="videoAccordion">
+    <div class="accordion-item categoria-configuração">
+        <h2 class="accordion-header">
+            <button id="Inicializacao1" class="accordion-button collapsed" type="button"
+                data-mdb-toggle="collapse" data-mdb-target="#InicializacaoCollapse1"
+                aria-expanded="false" aria-controls="InicializacaoCollapse1"
+                aria-label="Estação de recarga | EVE 0110C - EVE 0074C - EVE 00220B - EVE 0074B - CVE 3000P">
+                Como apontar a estação de recarga para um servidor OCPP - City e Business
+            </button>
+        </h2>
+        <div id="InicializacaoCollapse1" class="accordion-collapse collapse"
+            aria-labelledby="Inicializacao1" data-mdb-parent="#videoAccordion">
+            <div class="accordion-body">
+                <div class="embed-responsive video-container">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/yF9Va-BlZsg?si=8FPvNwZ7LnMvw8G7" width="100%"
+                        height="auto" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item categoria-Configuração">
+        <h2 class="accordion-header">
+            <button id="Inicializacao2" class="accordion-button collapsed" type="button"
+                data-mdb-toggle="collapse" data-mdb-target="#InicializacaoCollapse2"
+                aria-expanded="false" aria-controls="InicializacaoCollapse2"
+                aria-label="Como adicionar e excluir uma tag | EVE 0110C - EVE 0074C - EVE 00220B - EVE 0074B - CVE">
+                Saiba como adicionar e excluir uma tag pela página de configuração - City e Business
+            </button>
+        </h2>
+        <div id="InicializacaoCollapse2" class="accordion-collapse collapse"
+            aria-labelledby="Inicializacao2" data-mdb-parent="#videoAccordion">
+            <div class="accordion-body">
+                <div class="embed-responsive video-container">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/48_p_Kf-QjQ?si=5vi998IeWfZUZH75" width="100%"
+                        height="auto" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item categoria-configuracao">
+        <h2 class="accordion-header">
+            <button id="Inicializacao4" class="accordion-button collapsed"
+                type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#InicializacaoCollapse4" aria-expanded="false"
+                aria-controls="InicializacaoCollapse4"
+                aria-label="configuração do modo plug&Play | EVE 0110C - EVE 0074C - EVE 00220B - EVE 0074B - CV">
+                Saiba como configurar o modo plug&Play nas estações de recarga - City e Business
+            </button>
+        </h2>
+        <div id="InicializacaoCollapse4" class="accordion-collapse collapse"
+            aria-labelledby="Inicializacao4" data-mdb-parent="#videoAccordion">
+            <div class="accordion-body">
+                <div class="embed-responsive video-container">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/hflo80JZkEw?si=PnLqao8sMfYvQKzE"
+                        width="100%" height="auto" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item categoria-configuracao">
+        <h2 class="accordion-header">
+            <button id="Inicializacao5" class="accordion-button collapsed"
+                type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#InicializacaoCollapse5" aria-expanded="false"
+                aria-controls="InicializacaoCollapse5"
+                aria-label="Como limitar a corrente | EVE 0110C - EVE 0074C - EVE 00220B - EVE 0074B - CVE">
+                Como limitar a corrente fornecida pela Estação de Recarga para veículos elétricos - City e Business
+            </button>
+        </h2>
+        <div id="InicializacaoCollapse5" class="accordion-collapse collapse"
+            aria-labelledby="Inicializacao5" data-mdb-parent="#videoAccordion">
+            <div class="accordion-body">
+                <div class="embed-responsive video-container">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/8GK3NK9myao?si=fyKnFzhncF1ZcJ-w"
+                        width="100%" height="auto" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item categoria-configuracao">
+        <h2 class="accordion-header">
+            <button id="Inicializacao6" class="accordion-button collapsed"
+                type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#InicializacaoCollapse6"
+                aria-expanded="false" aria-controls="InicializacaoCollapse6"
+                aria-label="Configure estação de recarga modo privado | EVE 0110C - EVE 0074C - EVE">
+                Como configurar uma estação de recarga para veículos elétricos em modo privado - City e Business
+            </button>
+        </h2>
+        <div id="InicializacaoCollapse6" class="accordion-collapse collapse"
+            aria-labelledby="Inicializacao6" data-mdb-parent="#videoAccordion">
+            <div class="accordion-body">
+                <div class="embed-responsive video-container">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/evby78jW2Hw?si=vaVxoNAyIFeGC_xe"
+                        width="100%" height="auto" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao7" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse7"
+			aria-expanded="false" aria-controls="InicializacaoCollapse7"
+			aria-label="Novo vídeo de configuração">
+			Configure uma estação de recarga para veículos elétricos em modo público - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse7" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao7" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/TcZeQBOStIg?si=GUXkl9X9UNtK_p22" 
+					width="100%" height="auto" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao8" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse8"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse8"
+			aria-label="Novo vídeo de configuração">
+			Adicione e exclua tag's pelo dashboard CVE PRO - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse8" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao8" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/QjLr8YxeO1s?si=yZtfOgw1mK3E9iT6" 
+					width="100%" height="auto" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao9" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse9"
+			aria-expanded="false" aria-controls="InicializacaoCollapse9"
+			aria-label="Novo vídeo de configuração">
+			Como monetizar a estação de recarga para veículos elétricos - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse9" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao9" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/HAvt_4Wux3w?si=_DHO1LGCQmX2O8Zp"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao10" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse10"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse10"
+			aria-label="Novo vídeo de configuração">
+			Emita relatórios pelo dashboard CVE PRO - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse10" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao10" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/0vZ2c6ivsik?si=RFUJMeBpmkRLRe2x"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao11" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse11"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse11"
+			aria-label="Novo vídeo de configuração">
+			Cadastro de usuário no dashboard - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse11" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao11" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/2prnBo7AA_8?si=PU9S002rVoUrgkRO"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao12" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse12"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse12"
+			aria-label="Novo vídeo de configuração">
+			Crie grupo de estações no dashboard CVE PRO - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse12" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao12" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/idJx2CNCLuo?si=DXPUKlmCSg4L698w"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao13" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse13"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse13"
+			aria-label="Novo vídeo de configuração">
+			Como encontrar uma estação e recarregar o veículo elétrico - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse13" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao13" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/wKhyIwLq680?si=Dv8I3G-2MM_Jr6BN"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao14" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse14"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse14"
+			aria-label="Novo vídeo de configuração">
+			Aprenda a inserir dinheiro via Pix na carteira do app CVE - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse14" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao14" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/0NeZgKFxPuM?si=McoCD1VVN8tbUDR4"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao15" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse15"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse15"
+			aria-label="Novo vídeo de configuração">
+			Como iniciar uma recarga via QR code - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse15" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao15" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/mUBWs4_mzcI?si=8D3AgqWklTqQXlXz"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao16" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse16"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse16"
+			aria-label="Novo vídeo de configuração">
+			Como favoritar uma estação City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse16" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao16" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/vnFGYquiG8Y?si=MhSeFSgkE-H82PMK"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao17" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse17"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse17"
+			aria-label="Novo vídeo de configuração">
+			Como adicionar um cartão de crédito na carteira do aplicativo CVE - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse17" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao17" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/zOv0q0L7-O0?si=SXrQhpZ3B-tiuHtq"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao18" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse18"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse18"
+			aria-label="Novo vídeo de configuração">
+			Como configurar leitores biométricos para liberação de recargas - City e Business
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse18" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao18" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/3Kqzp302Hdo?si=pjfe97lDzolqGn7h"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao19" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse19"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse19"
+			aria-label="Novo vídeo de configuração">
+			Integre um leitor biométrico a plataforma CVE PRO - City e Business 
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse19" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao19" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/1dDd7viZmhU?si=I2jOuyPWFJNxUgoj"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao21" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse21"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse21"
+			aria-label="Novo vídeo de configuração">
+			Estação veicular rápida 30 kW - Como acessar a página de configuração? - DC 30 kW
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse21" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao21" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/HEbtYkea8_I?si=9Lrue98WCP_-vrcz"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="accordion-item categoria-configuracao">
+	<h2 class="accordion-header">
+		<button id="Inicializacao22" class="accordion-button collapsed"
+			type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#InicializacaoCollapse22"
+			aria-expanded="false" aria-controls="#InicializacaoCollapse21"
+			aria-label="Novo vídeo de configuração">
+			Como configurar os parâmetros OCPP e internet - DC 30 kW
+		</button>
+	</h2>
+	<div id="InicializacaoCollapse22" class="accordion-collapse collapse"
+		aria-labelledby="Inicializacao22" data-mdb-parent="#videoAccordion">
+		<div class="accordion-body">
+			<div class="embed-responsive video-container">
+				<iframe class="embed-responsive-item"
+					src="https://www.youtube.com/embed/w5iCzprikvI?si=umn5qNZXNgmtzdTR"
+					width="100%" height="auto" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+			
+
+						
+																																																																																																													
+																			
+																																																												
+																																																																																																																																														
+						
+													
+													
+
+			</main>
+			<footer class="footer border footer-shadow">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col text-center">
+							<p class="mb-0">
+								<a href="http://www.intelbras.com" class="text-muted"
+									target="_blank"><strong>Intelbras</strong></a> &copy;
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<script>
+
+		function showTable(tableId) {
+			// Ocultar todas as tabelas
+			document.querySelectorAll('.hidden').forEach(function (table) {
+				table.style.display = 'none';
+			});
+
+			// Mostrar a tabela específica
+			document.getElementById(tableId).style.display = 'block';
+		}
+
+		$(document).ready(function () {
+			$('#sidebarToggle').click(function () {
+				$('#sidebar').toggleClass('collapsed');
+			});
+		});
+
+		let currentCategoryFilter = '';
+
+		function applyFilters() {
+			let searchValue = document.getElementById('searchInput').value.toUpperCase();
+			let items = document.getElementsByClassName('accordion-item');
+
+			for (let i = 0; i < items.length; i++) {
+				let title = items[i].querySelector('button').innerText.toUpperCase();
+				let matchesSearch = title.indexOf(searchValue) > -1;
+				let matchesCategory = currentCategoryFilter === '' || items[i].classList.contains(currentCategoryFilter);
+
+				if (matchesSearch && matchesCategory) {
+					items[i].style.display = 'block';
+				} else {
+					items[i].style.display = 'none';
+				}
+			}
+		}
+
+		function toggleFiltro() {
+			document.querySelector('.filtro-categorias').classList.toggle('show');
+		}
+
+		function setCategoryFilter(category) {
+			currentCategoryFilter = category;
+			applyFilters();
+		}
+		// Função para alternar a exibição dos filtros
+		function toggleFiltros() {
+			var filtros = document.getElementById('filtros');
+			if (filtros.classList.contains('escondido')) {
+				filtros.classList.remove('escondido');
+				filtros.classList.add('mostrar');
+			} else {
+				filtros.classList.remove('mostrar');
+				filtros.classList.add('escondido');
+			}
+		}
+
+
+	</script>
+
+</body>
+
+</html>
