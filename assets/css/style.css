@@ -83,7 +83,7 @@ a.sidebar-link.actived {
 .sidebar-link.actived:hover {
     background: #00863F !important;
     color: #ffffff !important;
-    border-radius: 30px !important;
+    border-radius: 25px !important;
 }
 
 a.sidebar-link:hover {
