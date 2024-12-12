@@ -73,7 +73,7 @@ input-button-group {
 a.sidebar-link.actived {
     background: #00A335;
     color: #ffffff;
-    border-radius: 25px;
+    border-radius: px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 15px;
@@ -81,7 +81,7 @@ a.sidebar-link.actived {
 }
 
 .sidebar-link.actived:hover {
-    background: #004586 !important;
+    background: #00863F !important;
     color: #ffffff !important;
     border-radius: 25px !important;
 }
